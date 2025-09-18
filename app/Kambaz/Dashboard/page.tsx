@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 export default function Dashboard() {
   return (
     <div id="wd-dashboard">
@@ -7,7 +6,7 @@ export default function Dashboard() {
       <h2 id="wd-dashboard-published">Published Courses (8)</h2> <hr />
       <div id="wd-dashboard-courses">
         <div className="wd-dashboard-course">
-          <Link href="/Courses/1234" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/1234" className="wd-dashboard-course-link">
             <img src="/images/reactjs.jpg" width={200} height={150} />
             <div>
               <h5> CS1234 React JS </h5>
@@ -21,7 +20,7 @@ export default function Dashboard() {
        {/* My added courses */}
        {/* COURSE 2 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/1001" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/1001" className="wd-dashboard-course-link">
             <img src="/images/marketing.jpg" width={200} height={150} />
             <div>
               <h5> MKT1001 Intro Marketing </h5>
@@ -35,7 +34,7 @@ export default function Dashboard() {
 
         {/* COURSE 3 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/1002" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/1002" className="wd-dashboard-course-link">
             <img src="/images/analytics.jpg" width={200} height={150} />
             <div>
               <h5> MISM1002 Intro to Analytics  </h5>
@@ -49,7 +48,7 @@ export default function Dashboard() {
 
         {/* COURSE 4 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/2550" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/2550" className="wd-dashboard-course-link">
             <img src="/images/computer.jpg" width={200} height={150} />
             <div>
               <h5> CS2550 Object Oriented Design  </h5>
@@ -63,7 +62,7 @@ export default function Dashboard() {
 
         {/* COURSE 5 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/5000" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/5000" className="wd-dashboard-course-link">
             <img src="/images/yapping.jpeg" width={200} height={150} />
             <div>
               <h5> PPL5000 Small Talk & Yapping  </h5>
@@ -77,7 +76,7 @@ export default function Dashboard() {
 
         {/* COURSE 6 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/4505" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/4505" className="wd-dashboard-course-link">
             <img src="/images/math.jpeg" width={200} height={150} />
             <div>
               <h5> MATH4505 Intro. Adv. Math  </h5>
@@ -91,7 +90,7 @@ export default function Dashboard() {
 
         {/* COURSE 7 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/3456" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/3456" className="wd-dashboard-course-link">
             <img src="/images/figma.jpg" width={200} height={150} />
             <div>
               <h5> DSG3456 Intro. Figma  </h5>
@@ -105,7 +104,7 @@ export default function Dashboard() {
 
         {/* COURSE 8 */}
         <div className="wd-dashboard-course">
-          <Link href="/Courses/6767" className="wd-dashboard-course-link">
+          <Link href="/Kambaz/Courses/6767" className="wd-dashboard-course-link">
             <img src="/images/sixseven.jpeg" width={200} height={150} />
             <div>
               <h5> MATH6767 Theory of Six & Seven  </h5>

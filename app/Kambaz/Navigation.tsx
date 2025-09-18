@@ -6,15 +6,15 @@ export default function KambazNavigation() {
         Northeastern
       </a>
       <br />
-      <Link href="../Account/Profile" id="wd-account-link">
+      <Link href="/Kambaz/Account/Profile" id="wd-account-link">
         Account
       </Link>
       <br />
-      <Link href="../Dashboard" id="wd-dashboard-link">
+      <Link href="/Kambaz/Dashboard" id="wd-dashboard-link">
         Dashboard
       </Link>
       <br />
-      <Link href="../Dashboard" id="wd-course-link">
+      <Link href="/Kambaz/Courses" id="wd-course-link">
         Courses
       </Link>
       <br />
