@@ -22,6 +22,7 @@ export default function AssignmentEditor() {
         <br />
         <table>
           <thead></thead>
+          <tbody>
           <tr>
             <td align="right" valign="top">
               <label htmlFor="wd-points">Points</label>
@@ -38,7 +39,7 @@ export default function AssignmentEditor() {
             </td>
             <td>
               <select id="wd-group">
-                <option selected value="ASSIGNMENTS">
+                <option defaultValue="ASSIGNMENTS">
                   ASSIGNMENTS
                 </option>
                 <option value="QUIZZES">QUIZZES</option>
@@ -173,6 +174,7 @@ export default function AssignmentEditor() {
               <button id="wd-save">Save</button>
             </td>
           </tr>
+          </tbody>
         </table>
       </form>
     </div>
