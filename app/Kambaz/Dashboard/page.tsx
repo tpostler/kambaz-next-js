@@ -44,101 +44,115 @@ export default function Dashboard() {
               </Link>
             </Card>
           </Col>
-          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
-            {" "}
-            ... Another course ...{" "}
-          </Col>
-          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
-            {" "}
-            ... Another course ...{" "}
-          </Col>
-        </Row>
-      </div>
+        
       {/* My added courses */}
       {/* COURSE 2 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/1001" className="wd-dashboard-course-link">
-          <img src="/images/marketing.jpg" width={200} height={150} />
-          <div>
-            <h5> MKT1001 Intro Marketing </h5>
-            <p className="wd-dashboard-course-title">Learn Marketing</p>
-            <button> Go </button>
-          </div>
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+      <Card>
+        <Link href="/Kambaz/Courses/1001" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+          src="/images/marketing.jpg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> MKT1001 Intro Marketing </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>Learn Marketing</CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
+        </Card>
+      </Col>
       {/* COURSE 3 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/1002" className="wd-dashboard-course-link">
-          <img src="/images/analytics.jpg" width={200} height={150} />
-          <div>
-            <h5> MISM1002 Intro to Analytics </h5>
-            <p className="wd-dashboard-course-title">Learn Analytics</p>
-            <button> Go </button>
-          </div>
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+      <Card>
+        <Link href="/Kambaz/Courses/1002" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+          src="/images/analytics.jpg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> MISM1002 Intro to Analytics </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>Learn Analytics</CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
+        </Card>
+      </Col>
       {/* COURSE 4 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/2550" className="wd-dashboard-course-link">
-          <img src="/images/computer.jpg" width={200} height={150} />
-          <div>
-            <h5> CS2550 Object Oriented Design </h5>
-            <p className="wd-dashboard-course-title">Objects! In code?!?</p>
-            <button> Go </button>
-          </div>
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+      <Card>
+        <Link href="/Kambaz/Courses/2550" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+          src="/images/computer.jpg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> CS2550 Object Oriented Design </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>Objects! In code?!?</CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
+        </Card>
+      </Col>
       {/* COURSE 5 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/5000" className="wd-dashboard-course-link">
-          <img src="/images/yapping.jpeg" width={200} height={150} />
-          <div>
-            <h5> PPL5000 Small Talk & Yapping </h5>
-            <p className="wd-dashboard-course-title">
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+        <Card>
+        <Link href="/Kambaz/Courses/5000" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+           src="/images/yapping.jpeg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> PPL5000 Small Talk & Yapping </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
               Lock in on your yapping and small talk
-            </p>
-            <button> Go </button>
-          </div>
+            </CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
+        </Card>
+      </Col>
       {/* COURSE 6 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/4505" className="wd-dashboard-course-link">
-          <img src="/images/math.jpeg" width={200} height={150} />
-          <div>
-            <h5> MATH4505 Intro. Adv. Math </h5>
-            <p className="wd-dashboard-course-title">
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+        <Card>
+        <Link href="/Kambaz/Courses/4505" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+           src="/images/math.jpeg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> MATH4505 Intro. Adv. Math </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
               Super hard math class. No for the weak.
-            </p>
-            <button> Go </button>
-          </div>
+            </CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
+        </Card>
+      </Col>
       {/* COURSE 7 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/3456" className="wd-dashboard-course-link">
-          <img src="/images/figma.jpg" width={200} height={150} />
-          <div>
-            <h5> DSG3456 Intro. Figma </h5>
-            <p className="wd-dashboard-course-title">Learn Figma!</p>
-            <button> Go </button>
-          </div>
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+      <Card>
+        <Link href="/Kambaz/Courses/3456" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+          src="/images/figma.jpg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> DSG3456 Intro. Figma </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}> Learn Figma!</CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
+        </Card>
+      </Col>
+
       {/* COURSE 8 */}
-      <div className="wd-dashboard-course">
-        <Link href="/Kambaz/Courses/6767" className="wd-dashboard-course-link">
-          <img src="/images/sixseven.jpeg" width={200} height={150} />
-          <div>
-            <h5> MATH6767 Theory of Six & Seven </h5>
-            <p className="wd-dashboard-course-title">
+      <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+      <Card>
+        <Link href="/Kambaz/Courses/6767" className="wd-dashboard-course-link text-decoration-none text-dark">
+          <CardImg variant="top"
+          src="/images/sixseven.jpeg" width="100%" height={150} />
+          <CardBody>
+            <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden"> MATH6767 Theory of Six & Seven </CardTitle>
+            <CardText  className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
               Investigates why ppl are obsessed with 6 and 7
-            </p>
-            <button> Go </button>
-          </div>
+            </CardText>
+            <Button variant="primary">Go</Button>
+          </CardBody>
         </Link>
-      </div>
-      {/* END */}
+        </Card>
+      </Col>
+      </Row>
+    </div>
     </div>
   );
 }
