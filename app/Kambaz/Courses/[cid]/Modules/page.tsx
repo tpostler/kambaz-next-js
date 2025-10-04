@@ -7,7 +7,6 @@ import ModuleControlButtons from "./ModuleControlButtons";
 export default function Modules() {
   return (
     <div>
-      {/* add the buttons above ^^ */}
       <ModulesControls />
       <br />
       <br />
