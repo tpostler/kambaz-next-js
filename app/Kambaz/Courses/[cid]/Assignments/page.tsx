@@ -23,8 +23,14 @@ export default function Assignments() {
             <AssignmentHeaderButtons />
           </div>
 
-          <ListGroup className="wd-asignments rounded-0">
-            <ListGroupItem className="wd-assignment p-3 ps-1 d-flex align-items-center">
+          <ListGroup
+            className="wd-asignments rounded-0"
+            id="wd-assignment-list-item"
+          >
+            <ListGroupItem
+              className="wd-assignment p-3 ps-1 d-flex align-items-center"
+              id="wd-assignment-list-item"
+            >
               <BsGripVertical className="me-2 fs-3" />
               <IoDocumentTextOutline className="me-2 fs-3 text-success" />
               <div className="flex-grow-1">
@@ -36,15 +42,22 @@ export default function Assignments() {
                 </Link>
                 <br />
                 <span id="wd-assignment-list-text">
-                   <span className="text-danger">Multiple Modules</span><span className="text-muted"> | <b>Not avaible until </b>
-                  May 6 at 12:00am | <br></br> <b>Due</b> May 13 at 11:59pm |
-                  100pts</span>
+                  <span className="text-danger">Multiple Modules</span>
+                  <span className="text-muted">
+                    {" "}
+                    | <b>Not avaible until </b>
+                    May 6 at 12:00am | <br></br> <b>Due</b> May 13 at 11:59pm |
+                    100pts
+                  </span>
                 </span>
               </div>
               <AssignmentEditButtons />
             </ListGroupItem>
 
-            <ListGroupItem className="wd-assignment p-3 ps-1 d-flex align-items-center">
+            <ListGroupItem
+              className="wd-assignment p-3 ps-1 d-flex align-items-center"
+              id="wd-assignment-list-item"
+            >
               <BsGripVertical className="me-2 fs-3" />
               <IoDocumentTextOutline className="me-2 fs-3 text-success" />
               <div className="flex-grow-1">
@@ -56,15 +69,21 @@ export default function Assignments() {
                 </Link>
                 <br />
                 <span id="wd-assignment-list-text">
-                  <span className="text-danger">Multiple Modules</span> <span className="text-muted">| <b>Not avaible until </b>
-                  May 13 at 12:00am | <br></br> <b>Due</b> May 20 at 11:59pm |
-                  100pts</span>
+                  <span className="text-danger">Multiple Modules</span>{" "}
+                  <span className="text-muted">
+                    | <b>Not avaible until </b>
+                    May 13 at 12:00am | <br></br> <b>Due</b> May 20 at 11:59pm |
+                    100pts
+                  </span>
                 </span>
               </div>
               <AssignmentEditButtons />
             </ListGroupItem>
 
-            <ListGroupItem className="wd-assignment p-3 ps-1 d-flex align-items-center">
+            <ListGroupItem
+              className="wd-assignment p-3 ps-1 d-flex align-items-center"
+              id="wd-assignment-list-item"
+            >
               <BsGripVertical className="me-2 fs-3" />
               <IoDocumentTextOutline className="me-2 fs-3 text-success" />
               <div className="flex-grow-1">
@@ -76,9 +95,13 @@ export default function Assignments() {
                 </Link>
                 <br />
                 <span id="wd-assignment-list-text">
-                   <span className="text-danger">Multiple Modules</span><span className="text-muted"> | <b>Not avaible until </b>
-                  May 20 at 12:00am | <br></br> <b>Due</b> May 27 at 11:59pm |
-                  100pts</span>
+                  <span className="text-danger">Multiple Modules</span>
+                  <span className="text-muted">
+                    {" "}
+                    | <b>Not avaible until </b>
+                    May 20 at 12:00am | <br></br> <b>Due</b> May 27 at 11:59pm |
+                    100pts
+                  </span>
                 </span>
               </div>
               <AssignmentEditButtons />

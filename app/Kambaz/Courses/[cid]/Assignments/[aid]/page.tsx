@@ -156,10 +156,9 @@ export default function AssignmentEditor() {
           </Col>{" "}
           <br />
         </Row>
-        
         <Row>
           <Col sm={8}>
-          <hr></hr>
+            <hr></hr>
             <div className="d-flex gap-2 align-right justify-content-end">
               <Button type="button" variant="secondary">
                 Cancel
