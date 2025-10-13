@@ -28,6 +28,9 @@ import Styles from "./Styles";
 import Add from "./Add";
 import Square from "./Square";
 import Highlight from "./Highlight";
+import PathParameters from "./PathParameters";
+import TodoItem from "./todos/TodoItem";
+import TodoList from "./todos/TodoList";
 
 export default function Lab3() {
   return (
@@ -69,5 +72,12 @@ export default function Lab3() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam
         vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus sequi maiores, provident voluptates.
       </Highlight>
+      <hr/>
+      <PathParameters/>
+      <hr/>
+      <hr/>
+      <h3>Data Structures</h3>
+      <TodoItem/> <br/>
+      <TodoList/>
     </div>
 );}
