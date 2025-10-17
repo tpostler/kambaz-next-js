@@ -1,4 +1,7 @@
+/* eslint-disable react/jsx-key */
 import Link from "next/link";
+import * as db from "../Database";
+
 import {
   Button,
   Card,
@@ -10,13 +13,34 @@ import {
   Row,
 } from "react-bootstrap";
 export default function Dashboard() {
+  const courses = db.courses;
+
   return (
     <div id="wd-dashboard">
       <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
-      <h2 id="wd-dashboard-published">Published Courses (8)</h2> <hr />
+      <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2> <hr />
       <div id="wd-dashboard-courses">
         {/* Code Here */}
         <Row xs={1} md={5} className="g-4">
+          {courses.map((course) => (
+            <Col key={course._id} className="wd-dashboard-course" style={{ width: "300px" }}>
+              <Card>
+                <Link href={`/Kambaz/Courses/${course._id}/Home`}
+                      className="wd-dashboard-course-link text-decoration-none text-dark" >
+                  <CardImg src={`/images/${course.number}.jpg`} variant="top" width="100%" height={160} />
+                  <CardBody className="card-body">
+                    <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                      {course.name} </CardTitle>
+                    <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                      {course.description} </CardText>
+                    <Button variant="primary"> Go </Button>
+                  </CardBody>
+                </Link>
+              </Card>
+            </Col>
+          ))}
+
+          {/** 
           <Col className="wd-dashboard-course" style={{ width: "300px" }}>
             <Card>
               <Link
@@ -45,8 +69,6 @@ export default function Dashboard() {
             </Card>
           </Col>
         
-      {/* My added courses */}
-      {/* COURSE 2 */}
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
       <Card>
         <Link href="/Kambaz/Courses/1001" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -60,7 +82,7 @@ export default function Dashboard() {
         </Link>
         </Card>
       </Col>
-      {/* COURSE 3 */}
+
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
       <Card>
         <Link href="/Kambaz/Courses/1002" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -74,7 +96,7 @@ export default function Dashboard() {
         </Link>
         </Card>
       </Col>
-      {/* COURSE 4 */}
+
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
       <Card>
         <Link href="/Kambaz/Courses/2550" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -88,7 +110,7 @@ export default function Dashboard() {
         </Link>
         </Card>
       </Col>
-      {/* COURSE 5 */}
+
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
         <Card>
         <Link href="/Kambaz/Courses/5000" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -104,7 +126,7 @@ export default function Dashboard() {
         </Link>
         </Card>
       </Col>
-      {/* COURSE 6 */}
+
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
         <Card>
         <Link href="/Kambaz/Courses/4505" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -120,7 +142,7 @@ export default function Dashboard() {
         </Link>
         </Card>
       </Col>
-      {/* COURSE 7 */}
+
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
       <Card>
         <Link href="/Kambaz/Courses/3456" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -135,7 +157,6 @@ export default function Dashboard() {
         </Card>
       </Col>
 
-      {/* COURSE 8 */}
       <Col className="wd-dashboard-course" style={{ width: "300px" }}>
       <Card>
         <Link href="/Kambaz/Courses/6767" className="wd-dashboard-course-link text-decoration-none text-dark">
@@ -152,6 +173,10 @@ export default function Dashboard() {
         </Card>
       </Col>
       </Row>
+    </div>
+    </div>
+          */}
+    </Row>
     </div>
     </div>
   );
