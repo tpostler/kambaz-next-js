@@ -23,6 +23,7 @@ export default function AssignmentEditor() {
 
   return (
     <div id="wd-assignments-editor">
+      
       <h4>Assignment Editor</h4>
 
       {assignments
