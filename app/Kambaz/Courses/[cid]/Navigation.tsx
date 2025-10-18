@@ -26,7 +26,7 @@ export default function CourseNavigation() {
           // I got super confused when implementing this so I got className
           // code from Claude
           className={`list-group-item border border-0 ${
-            pathname === `/Kambaz/Courses/${cid}}/${link}` ||
+            pathname === `/Kambaz/Courses/${cid}/${link}` ||
             pathname.startsWith(`/Kambaz/Courses/${cid}/${link}/`)
               ? "active text-black"
               : "text-danger" }`}>
