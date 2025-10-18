@@ -1,11 +1,33 @@
 [
-  { "_id": "A101", "title": "Propulsion Assignment", "course": "1234" },
-  { "_id": "A102", "title": "Combustion Analysis", "course": "1234" },
-  { "_id": "A103", "title": "Nozzle Design Project", "course": "1234" },
-  { "_id": "A201", "title": "Aerodynamics Quiz", "course": "1234" },
-  { "_id": "A202", "title": "Flow Analysis", "course": "1234" },
-  { "_id": "A203", "title": "Heating Analysis", "course": "1234" },
-  { "_id": "A301", "title": "Structural Design Task", "course": "1234" },
-  { "_id": "A302", "title": "Orbital Calculations", "course": "1234" },
-  { "_id": "A303", "title": "Systems Engineering Exam", "course": "1234" }
+  { "_id": "A101", "title": "React Components Project", "course": "RS101" },
+  { "_id": "A102", "title": "State Management Quiz", "course": "RS101" },
+  { "_id": "A103", "title": "React Router Application", "course": "RS101" },
+  
+  { "_id": "A201", "title": "Marketing Strategy Analysis", "course": "RS102" },
+  { "_id": "A202", "title": "Digital Marketing Campaign", "course": "RS102" },
+  { "_id": "A203", "title": "Consumer Behavior Case Study", "course": "RS102" },
+  
+  { "_id": "A301", "title": "Data Visualization Project", "course": "RS103" },
+  { "_id": "A302", "title": "Statistical Analysis Report", "course": "RS103" },
+  { "_id": "A303", "title": "Business Intelligence Dashboard", "course": "RS103" },
+  
+  { "_id": "A401", "title": "OOP Design Implementation", "course": "RS104" },
+  { "_id": "A402", "title": "Design Patterns Assignment", "course": "RS104" },
+  { "_id": "A403", "title": "SOLID Principles Refactoring", "course": "RS104" },
+  
+  { "_id": "A501", "title": "Elevator Pitch Video", "course": "RS105" },
+  { "_id": "A502", "title": "Professional Networking Essay", "course": "RS105" },
+  { "_id": "A503", "title": "Mock Interview Analysis", "course": "RS105" },
+  
+  { "_id": "A601", "title": "Algorithm Design Problem Set", "course": "RS106" },
+  { "_id": "A602", "title": "Data Structures Implementation", "course": "RS106" },
+  { "_id": "A603", "title": "Complexity Analysis Quiz", "course": "RS106" },
+  
+  { "_id": "A701", "title": "Adobe Suite Tutorial Portfolio", "course": "RS107" },
+  { "_id": "A702", "title": "Typography and Color Project", "course": "RS107" },
+  { "_id": "A703", "title": "Brand Identity Design Package", "course": "RS107" },
+  
+  { "_id": "A801", "title": "Meme Culture Timeline", "course": "RS108" },
+  { "_id": "A802", "title": "Social Impact Research Paper", "course": "RS108" },
+  { "_id": "A803", "title": "Ethical Content Creation Presentation", "course": "RS108" }
 ]
