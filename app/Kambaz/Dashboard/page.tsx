@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
 import Link from "next/link";
 import * as db from "../Database";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addNewCourse, deleteCourse, updateCourse } from "../Courses/reducer";
 import {
   Button,
   Card,
@@ -15,10 +16,11 @@ import {
   Row,
 } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
-import { describe } from "node:test";
-export default function Dashboard() {
-  const [courses, setCourses] = useState<any[]>(db.courses);
 
+export default function Dashboard() {
+  //const [courses, setCourses] = useState<any[]>(db.courses);
+  const { courses } = useSelector((state: any) => state.coursesReducer);
+  const dispatch = useDispatch();
   const [course, setCourse] = useState<any>({
     _id: "0",
     name: "New Course",
@@ -29,26 +31,6 @@ export default function Dashboard() {
     description: "New Description",
   });
 
-  const addNewCourse = () => {
-    const newCourse = { ...course, _id: uuidv4() };
-    setCourses([...courses, newCourse]);
-  };
-
-  const deleteCourse = (courseId: string) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
-  };
-
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if(c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
 
   return (
     <div className="p-4" id="wd-dashboard">
@@ -58,12 +40,12 @@ export default function Dashboard() {
         <button
           className="btn btn-primary float-end"
           id="wd-add-new-course-click"
-          onClick={addNewCourse}
+          onClick={() => dispatch(addNewCourse(course))}
         >
           Add
         </button>
         <button className="btn btn-warning float-end me-2"
-        onClick={updateCourse} id="wd-update-course-click">
+        onClick={() => dispatch(updateCourse(course))} id="wd-update-course-click">
           Update
         </button>
       </h5>
@@ -87,7 +69,7 @@ export default function Dashboard() {
       <div id="wd-dashboard-courses">
         {/* Code Here */}
         <Row xs={1} md={5} className="g-4">
-          {courses.map((course) => (
+          {courses.map((course: { _id: Key | null | undefined; image: string | Blob | undefined; name: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; description: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }) => (
             <Col
               key={course._id}
               className="wd-dashboard-course"
@@ -118,7 +100,7 @@ export default function Dashboard() {
                     <button
                       onClick={(event) => {
                         event.preventDefault();
-                        deleteCourse(course._id);
+                        dispatch(deleteCourse(course._id));
                       }}
                       className="btn btn-danger float-end"
                       id="wd-delete-course-click">
