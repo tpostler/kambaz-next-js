@@ -7,6 +7,7 @@
     "endDate": "2025-12-15",
     "department": "CS",
     "credits": 4,
+    "image": "/images/CS1234.jpg",
     "description": "This course provides an in-depth study of how to become a full-stack software developers."
   },
   {
@@ -17,6 +18,7 @@
     "endDate": "2025-12-15",
     "department": "Buisness",
     "credits": 3,
+    "image": "/images/MKT1001.jpg",
     "description": "This course offers a comprehensive exploration of what marketing is and the different careers you can pursue."
   },
   {
@@ -27,6 +29,7 @@
     "endDate": "2025-12-15",
     "department": "Buisness",
     "credits": 4,
+    "image": "/images/MISM1002.jpg",
     "description": "This course delves into the principles and practices of buisness, product and marketing analytics, offering students a detailed understanding of various technology behind data analysis."
   },
   {
@@ -37,6 +40,7 @@
     "endDate": "2025-12-15",
     "department": "CS",
     "credits": 4,
+    "image": "/images/CS3550.jpg",
     "description": "CS 3550 teaches a rigorous approach to object-oriented programming and design, with an emphasis on abstraction, modularity, and code reuse as applied to the building and understanding of large-scale systems."
   },
   {
@@ -47,6 +51,7 @@
     "endDate": "2025-12-15",
     "department": "Sociology",
     "credits": 3,
+    "image": "/images/SOC5000.jpg",
     "description": "Teaches student how to make small talk with buisness executives. Students will learn how to maximize their yapping skills to get them a job."
   },
   {
@@ -57,6 +62,7 @@
     "endDate": "2025-12-15",
     "department": "CS",
     "credits": 3,
+    "image": "/images/CS3000.jpg",
     "description": "This is an introductory undergraduate course in algorithms. Every computer program can be viewed as an implementation of an algorithm for solving a particular computational problem. The focus of this course is on learning algorithm design techniques for solving the underlying computational problems."
   },
   {
@@ -67,6 +73,7 @@
     "endDate": "2025-12-15",
     "department": "Art",
     "credits": 3,
+    "image": "/images/ARTG2500.jpg",
     "description": "This course offers an exploration of the different graphic design tools. Students will complete a dinal design projects in their perfered graphic design software."
   },
   {
@@ -77,6 +84,7 @@
     "endDate": "2025-12-15",
     "department": "Sociology",
     "credits": 4,
+    "image": "/images/SOC3000.jpg",
     "description": "This course explores the complex relationship the modern day meme culture and its effect on today's youth."
   }
 ]
