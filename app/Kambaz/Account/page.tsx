@@ -1,17 +1,15 @@
 "use client";
-
-{/* I had to do the redirect this way asue of a run time hydration
-    error I kept getting. :( */}
-    
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { redirect } from "next/dist/client/components/navigation";
 
 export default function AccountPage() {
-  const router = useRouter();
-  
-  useEffect(() => {
-    router.replace("/Kambaz/Account/Signin");
-  }, [router]);
-  
-  return null;
+  const { currentUser } = useSelector(
+    (state: RootState) => state.accountReducer
+  );
+  if (!currentUser) {
+    redirect("/Kambaz/Account/Signin");
+  } else {
+    redirect("/Kambaz/Account/Profile");
+  }
 }
