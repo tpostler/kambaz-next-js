@@ -16,7 +16,7 @@ export default function CourseNavigation() {
     "Grades",
     "People",
   ];
-  console.log("LOOK HERE: ", cid);
+  
   return (
     <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
       {links.map((link) => (

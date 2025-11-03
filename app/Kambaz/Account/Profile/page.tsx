@@ -24,7 +24,7 @@ export default function Profile() {
 
   const signout = () => {
     dispatch(setCurrentUser(null));
-    redirect("/Account/Signin");
+    redirect("/Kambaz/Account/Signin");
   };
 
   useEffect(() => {

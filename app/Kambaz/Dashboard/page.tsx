@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+
 import * as db from "../Database";
+
 import { RootState } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewCourse, deleteCourse, updateCourse } from "../Courses/reducer";
@@ -16,7 +18,7 @@ import {
   FormControl,
   Row,
 } from "react-bootstrap";
-import { v4 as uuidv4 } from "uuid";
+//import { v4 as uuidv4 } from "uuid";
 
 export default function Dashboard() {
   const { currentUser } = useSelector(

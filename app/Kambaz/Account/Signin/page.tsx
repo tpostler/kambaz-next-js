@@ -21,7 +21,7 @@ export default function Signin() {
    if (!user) return;
 
    dispatch(setCurrentUser(user));
-   console.log("SIGNIN user: ", user);
+   // DEBUG console.log("SIGNIN user: ", user);
    redirect("/Kambaz/Dashboard"); // this line may need to change to get it to work
   };
 
