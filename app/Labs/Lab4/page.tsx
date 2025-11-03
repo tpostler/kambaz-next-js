@@ -1,5 +1,5 @@
 "use client";
-import ReduxExamples from "./ReduxExamples/page";
+import ReduxExamples from "./ReduxExamples";
 import ArrayStateVariable from "./ArrayStateVariables";
 import BooleanStateVariables from "./BooleanStateVariables";
 import ClickEvent from "./ClickEvent";
