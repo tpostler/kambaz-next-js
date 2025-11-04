@@ -20,8 +20,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { addAssignment, updateAssignment } from "../reducer";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AssignmentEditor() {
+  const router = useRouter();
+
   const { cid, aid } = useParams();
   const dispatch = useDispatch();
   const { assignments } = useSelector(
@@ -46,22 +49,30 @@ export default function AssignmentEditor() {
 
   const handleSave = () => {
     // DEBUG
-    //console.log("saving: ", assignment);
+    console.log("saving: ", assignment);
     if(aid === "new") {
+      console.log("dispatching new assignment");
       dispatch(addAssignment(assignment));
     }
     else {
       dispatch(updateAssignment(assignment));
     }
+    console.log("made it out of if/else");
     // return back to assignments page
-    redirect(`/Kambaz/Courses/${cid}/Assignments`);
+    router.push(`/Kambaz/Courses/${cid}/Assignments`);
+    console.log("did it make it this far?");
   };
 
   return (
     <div id="wd-assignments-editor">
       <h4>Assignment Editor</h4>
 
-      <Form id="wd-assignment-form">
+      <Form 
+      id="wd-assignment-form"
+      onSubmit={(e) =>{
+        e.preventDefault();
+        console.log("did it try to submit?");
+      }}>
         <Row>
           <FormLabel column sm={4}>
             Assignment Name
@@ -208,7 +219,9 @@ export default function AssignmentEditor() {
               <Button
                 type="button"
                 variant="secondary"
-                href={`/Kambaz/Courses/${cid}/Assignments`}
+                onClick={() => 
+                  router.push(`/Kambaz/Courses/${cid}/Assignments`)
+                }
               >
                 Cancel
               </Button>

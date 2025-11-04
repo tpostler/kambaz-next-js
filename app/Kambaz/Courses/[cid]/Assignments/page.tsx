@@ -1,11 +1,9 @@
 "use client"
 
-import { useState } from "react";
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
-import * as db from "../../../Database";
 
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { BsGripVertical } from "react-icons/bs";
@@ -17,17 +15,15 @@ import AssignmentEditButtons from "./AssignmentEditButtons";
 import AssignmentHeaderButtons from "./AssignmentHeaderButtons";
 
 // reducer (state management) stuff 
-import { addAssignment, editAssignment, updateAssignment, deleteAssignment } from "./reducer";
+import { deleteAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
 
-// TODO - refactor so that only faculty can only edit
 
 export default function Assignments() {
 
   // set up state mangement for assignments
   const { cid } = useParams();
-  const [assignmentTitle, setAssignmentTitle] = useState("");
   const { assignments } = useSelector((state: RootState) => state.assignmentReducer);
   const dispatch = useDispatch();
   
@@ -35,7 +31,7 @@ export default function Assignments() {
   const { currentUser } = useSelector((state: RootState) => state.accountReducer);
 
   // DEBUG
-  console.log("current user:", currentUser?.firstName);
+  // console.log("current user:", currentUser?.firstName);
   //console.log("current user role:", currentUser?.role);
   //const assignments = db.assignments;
 
@@ -87,6 +83,7 @@ export default function Assignments() {
                 </span>
               </div>
               <AssignmentEditButtons 
+              userRole={currentUser?.role?? ""}
               assignmentId={assignment._id}
               deleteAssignment={(assignmentId) => {
                 dispatch(deleteAssignment(assignmentId));

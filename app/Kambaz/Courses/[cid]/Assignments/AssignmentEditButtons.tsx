@@ -3,7 +3,9 @@ import GreenCheckmarkAssign from "./GreenCheckmarkAssign";
 import { FaTrash } from "react-icons/fa";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
-export default function AssignmentEditButtons({ assignmentId, deleteAssignment, }: {
+
+export default function AssignmentEditButtons({ userRole, assignmentId, deleteAssignment, }: {
+  userRole: string;
   assignmentId: string;
   deleteAssignment: (assignmentId: string) => void; 
   }) { 
@@ -17,10 +19,13 @@ export default function AssignmentEditButtons({ assignmentId, deleteAssignment, 
   return (
     <div className="float-end">
       <GreenCheckmarkAssign />
-      
+
+      {/* update so only faculaty can see */}
+      {userRole === "FACULTY" && 
       <FaTrash
         className="text-danger me-2 mb-1"
         onClick={ handleShow} />
+      }
 
       <Modal show={show}>
             <Modal.Header>
