@@ -15,10 +15,12 @@ import AssignmentEditButtons from "./AssignmentEditButtons";
 import AssignmentHeaderButtons from "./AssignmentHeaderButtons";
 
 // reducer (state management) stuff 
-import { deleteAssignment } from "./reducer";
+import { deleteAssignment, setAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
 
+import * as client from "./client";
+import { useEffect } from "react";
 
 export default function Assignments() {
 
@@ -30,10 +32,25 @@ export default function Assignments() {
   // set up state manager for users
   const { currentUser } = useSelector((state: RootState) => state.accountReducer);
 
-  // DEBUG
-  // console.log("current user:", currentUser?.firstName);
-  //console.log("current user role:", currentUser?.role);
-  //const assignments = db.assignments;
+  const onUpdateAssignment = async (assignment: any) => {
+      await client.updateAssignment(assignment);
+      const newAssignment = assignments.map((a: any) => a._id === assignment._id ? assignment : a );
+      dispatch(setAssignment(newAssignment));
+    };
+  
+    const onRemoveAssignment = async (assignmentIs: string) => {
+      await client.deleteAssignment(assignmentIs);
+      dispatch(setAssignment(assignments.filter((a: any) => a._id !== assignmentIs)));
+    };
+
+  const fetchAssignments = async () => {
+    const assignments = await client.findAssignmentsForCourse(cid as string);
+    dispatch(setAssignment(assignments));
+  };
+  useEffect(() => {
+    fetchAssignments();
+  }, []);
+
 
   return (
     <div id="wd-assignments">
@@ -57,7 +74,6 @@ export default function Assignments() {
             id="wd-assignment-list-item" >
             {/* This is where my main edits wil be */}
             {assignments
-            .filter((assignment: any) => assignment.course === cid)
             .map((assignment: any) =>
               <ListGroupItem
               key={assignment._id}
@@ -85,9 +101,7 @@ export default function Assignments() {
               <AssignmentEditButtons 
               userRole={currentUser?.role?? ""}
               assignmentId={assignment._id}
-              deleteAssignment={(assignmentId) => {
-                dispatch(deleteAssignment(assignmentId));
-              }}/>
+              deleteAssignment={onRemoveAssignment}/>
             </ListGroupItem>)}
             </ListGroup>
         </ListGroupItem>

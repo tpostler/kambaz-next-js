@@ -1,8 +1,8 @@
 "use client";
 
-import { redirect, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
-import * as db from "../../../../Database";
+import * as client from "../client";
 
 import {
   Button,
@@ -26,20 +26,25 @@ export default function AssignmentEditor() {
   const router = useRouter();
 
   const { cid, aid } = useParams();
+  const isNew = aid === "new";
+
   const dispatch = useDispatch();
   const { assignments } = useSelector(
     (state: RootState) => state.assignmentReducer
-  );
+  ) as { assignments: any[] };
+
+  const existingAssignment = assignments.find((a: any) => a._id === aid);
+
   // creating the intial state to work with
-  const [assignment, setAssignment] = useState({
-    _id: aid === "new" ? "new" : aid,
-    title: aid === "new" ? "New Assignment" : assignments.find((a: any) => a._id === aid)?.title ?? "",
+  const [assignment, setAssignment] = useState<any>({
+    _id: isNew ? "new" : aid,
+    title: isNew ? "New Assignment" : existingAssignment?.title ?? "",
     course: cid,
   });
 
   let asgnTitle = "";
   // do the logic of wether its a new assignment now:
-  if (aid == "new") {
+  if (isNew) {
     asgnTitle = "New Assignment";
     // set everything defeault values
   } else {
@@ -47,20 +52,20 @@ export default function AssignmentEditor() {
     asgnTitle = assignments.find((a: any) => a._id === aid)?.title ?? "";
   }
 
-  const handleSave = () => {
-    // DEBUG
-    console.log("saving: ", assignment);
+  // saving
+  const handleSave = async () => {
     if(aid === "new") {
-      console.log("dispatching new assignment");
-      dispatch(addAssignment(assignment));
+     const neww = await client.createAssignmentForCourse(cid as string, assignment);
+
+      dispatch(addAssignment(neww));
     }
     else {
-      dispatch(updateAssignment(assignment));
+      const saved = await client.updateAssignment(assignment);
+
+      dispatch(updateAssignment(saved));
     }
-    console.log("made it out of if/else");
     // return back to assignments page
     router.push(`/Kambaz/Courses/${cid}/Assignments`);
-    console.log("did it make it this far?");
   };
 
   return (
