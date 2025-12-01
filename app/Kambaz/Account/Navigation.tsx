@@ -6,14 +6,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 export default function AccountNavigation() {
-  const { currentUser } = useSelector(
-    (state: RootState) => state.accountReducer
-  );
-  const links = currentUser ? ["Profile"] : ["Signin", "Signup"];
+  const { currentUser } = useSelector((state: RootState) => state.accountReducer);
+  const links = currentUser ? ["Profile", ] : ["Signin", "Signup"];
   const pathname = usePathname();
   
   return (
-    <Nav variant="pills">
+    <Nav variant="pills" className="px-3">
       {links.map((link) => (
         <NavItem key={link}>
           <NavLink
@@ -23,8 +21,13 @@ export default function AccountNavigation() {
           >
             {link}
           </NavLink>
+          {currentUser && currentUser.role === "ADMIN" && (
+            <NavLink as={Link} href={`/Kambaz/Account/Users`}  active={pathname.endsWith('Users')}> Users </NavLink> )}
+
         </NavItem>
       ))}
+      <br/>
     </Nav>
+    
   );
 }
