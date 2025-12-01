@@ -131,7 +131,7 @@ export default function AssignmentEditor() {
               <option value="projects">PROJECTS</option>
             </FormSelect>
           </Col>
-        </Row>{" "}
+        </Row>
         <br />
         <Row>
           <FormLabel column sm={2} className="text-sm-end">
