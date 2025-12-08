@@ -34,3 +34,48 @@ body * {
 .wd-lesson {
   border-left: 3px solid green !important;
 }
+
+.wd-contextMenu-item {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.context-hover {
+  background-color: white;
+  transition: background-color 0.3 ease;
+}
+
+.context-hover:hover {
+  background-color: lightgray;
+}
+
+.wd-quiz-details-right {
+  text-align: right;
+}
+
+.wd-quiz-details-left {
+  text-align: left;
+}
+
+.correct-ans {
+  color: green;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.possible-answer {
+  cursor: pointer;
+  position: relative;
+}
+
+.possible-answer:hover {
+  font-style: italic;
+  background-color: lightgrey;
+}
+
+.green {
+  color: green;
+}
+
+.wd-add-question-btn {
+  max-width: 20%;
+}
