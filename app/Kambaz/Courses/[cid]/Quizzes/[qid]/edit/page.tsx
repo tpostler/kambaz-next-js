@@ -145,6 +145,20 @@ export default function EditQuiz() {
     }
   };
 
+  const handleCancel = async () => {
+    if (!cid) return;
+    if (!quiz) return;
+    try {
+      if (newQuiz) {
+        router.push(`/Kambaz/Courses/${cid}/Quizzes`);
+      } else {
+        router.push(`/Kambaz/Courses/${cid}/Quizzes/${qid}`);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   const [activeTab, setActiveTab] = useState<string>("Details");
   const [showNewQuestion, setShowNewQuestion] = useState(false);
 
@@ -187,9 +201,9 @@ export default function EditQuiz() {
   return (
     <div className="wd-quiz-edit-quiz">
       <h3>
-        <b>Quiz Name</b>
+        <b>{quiz.name}</b>
       </h3>
-      <p>Unpublished</p>
+      {quiz.published? <p>Published</p> : <p>Not Published</p>}
       <TabContainer activeKey={activeTab} onSelect={handleTabSelect}>
         <Nav variant="tabs">
           <NavItem>
@@ -515,7 +529,10 @@ export default function EditQuiz() {
                 <Col sm={8}>
                   <hr></hr>
                   <div className="d-flex gap-2 align-right justify-content-end">
-                    <Button type="button" variant="secondary">
+                    <Button 
+                    type="button" 
+                    variant="secondary"
+                    onClick={() => handleCancel()}>
                       Cancel
                     </Button>
                     <Button

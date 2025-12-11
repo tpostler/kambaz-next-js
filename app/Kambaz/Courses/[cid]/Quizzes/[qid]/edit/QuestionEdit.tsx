@@ -197,7 +197,7 @@ export default function QuestionEdit({
       };
     });
   };
-  // HELPERS - CONSIDER MOVING THESE
+  // helpers
   const multipleChoiceQuestion = () => {
     return (
       <div>
@@ -254,8 +254,6 @@ export default function QuestionEdit({
     );
   };
 
-  // This is wrong, i want to hardcode the true false answers and use the checkbox to manage
-  // it
   const trueFalseQuestion = () => {
     return (
       <div>
@@ -282,8 +280,6 @@ export default function QuestionEdit({
     );
   };
 
-  // i think this is okay to leave as before becuase the preview will
-  // just render differently
   const fillInBlankQuestion = () => {
     return (
       <div>

@@ -274,7 +274,7 @@ export default function QuizDetails() {
               variant="secondary"
               onClick={() => router.push(`/Kambaz/Courses/${cid}/Quizzes`)}
             >
-              Save Quiz
+              Done
             </Button>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function QuizDetails() {
               <ListGroupItem className="list-group-item p-3 background-gray" key={a._id}>
                 <Link
                 className="text-dark"
-                href={`/Kambaz/Courses/${cid}/Quizzes/${quiz._id}/attempt?mode=reivew&attemptId=${lastAttempt._id}`}
+                href={`/Kambaz/Courses/${cid}/Quizzes/${quiz._id}/attempt?mode=review&attemptId=${lastAttempt._id}`}
                 >
                   <h5><b>Attempt {a.attemptNumber}</b></h5>
                 </Link>
@@ -374,7 +374,7 @@ export default function QuizDetails() {
                 <Button
                   variant="danger"
                   onClick={() =>
-                    router.push(`/Kambaz/Courses/${cid}/Quizzes/${qid}/attempt`)
+                    router.push(`/Kambaz/Courses/${cid}/Quizzes/${qid}/attempt?mode=attempt`)
                   }
                 >
                   Take the Quiz

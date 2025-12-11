@@ -79,3 +79,9 @@ body * {
 .wd-add-question-btn {
   max-width: 20%;
 }
+
+.selected-answer {
+  background-color: rgba(192, 198, 202, 0.25);
+  border: solid;
+  border-width: 0.2;
+}

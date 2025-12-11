@@ -87,7 +87,6 @@ export default function QuizEditButtons({
           >
             Delete
           </div>
-          {/* Add a conditional so if quiz is published then the button needs to unpublish... */}
           <div
             className="wd-contextMenu-item context-hover"
             onClick={() => console.log("Publish quiz")}

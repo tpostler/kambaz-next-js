@@ -99,7 +99,61 @@ export default function Quizzes() {
             id="wd-assignment-list-item"
           >
             {student &&
-              quizzes.map((quiz: any) => (
+              quizzes.filter((quiz: any) => quiz.published === true)
+              .map((quiz: any) =>
+                  <ListGroupItem
+                  key={quiz._id}
+                  className="wd-assignment p-3 ps-1 d-flex align-items-center"
+                  id="wd-assignment-list-item" >
+                  <RxRocket className="me-2 fs-3 text-success" />
+                  <div className="flex-grow-1">
+                    <Link
+                      href={`/Kambaz/Courses/${cid}/Quizzes/${quiz._id}`}
+                      className="wd-assignment-link text-dark"
+                    >
+                      <b>{quiz.name}</b>
+                    </Link>
+                    <br />
+                    <span id="wd-assignment-list-text">
+                     
+                      <div className="text-muted">
+                      <b>Due</b>{" "}
+                      {quiz?.dueDate &&
+                        new Date(quiz.dueDate).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}{" "}
+                      | <b>Points</b> {quiz?.points} | <b>Questions</b>{" "}
+                      {quiz?.questions?.length || 0} | <b>Available </b>
+                      {quiz?.availableFromDate &&
+                        new Date(quiz.availableFromDate).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          }
+                        )}{" "}
+                      -{" "}
+                      {quiz?.availableToDate &&
+                        new Date(quiz.availableToDate).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          }
+                        )}{" "}
+                        
+                      |<b> Time Limit</b> {quiz?.timeLimit} minutes
+                      </div>
+                    </span>
+                  </div>
+                </ListGroupItem>
+              )}
+
+              {/**
                 <ListGroupItem
                   key={quiz._id}
                   className="wd-assignment p-3 ps-1 d-flex align-items-center"
@@ -152,6 +206,7 @@ export default function Quizzes() {
                   </div>
                 </ListGroupItem>
               ))}
+                */}
 
             {faculty &&
               quizzes.map((quiz: any) => (
